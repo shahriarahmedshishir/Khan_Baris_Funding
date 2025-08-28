@@ -43,12 +43,6 @@ const navItems = [
     icon: <FaTachometerAlt size={18} />,
     requiresAdmin: true,
   },
-  {
-    to: "/home/register",
-    label: "Register",
-    icon: <FaTachometerAlt size={18} />,
-    requiresAdmin: true,
-  },
 ];
 
 const Navbar = () => {

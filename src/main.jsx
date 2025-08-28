@@ -6,16 +6,14 @@ import User from "./Components/User.jsx";
 import About from "./Components/About.jsx";
 import Salat from "./Components/Salat.jsx";
 import Profile from "./Components/Profile.jsx";
-import ChatGroup from "./Components/ChatGroup.jsx";
 import Dashboard from "./Components/Dashboard.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PrivateRouter from "./Components/PrivateRoter/PrivateRouter.jsx";
+import PrivateRouter from "./Components/PrivateRouter/PrivateRouter.jsx";
 import SignIn from "./SignIn.jsx";
 import AuthProvider from "./Components/context/AuthProvider.jsx";
 import AddFund from "./Components/AddFund.jsx";
 import EditProfile from "./Components/EditProfile.jsx";
-import Register from "./Components/Sign Up/Register.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,75 +32,66 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <About />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
       },
       {
         path: "salat",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <Salat />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
       },
       {
         path: "profile",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <Profile />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
       },
       {
         path: "user",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <User />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
-        loader: () => fetch("http://localhost:3000/profile"),
       },
       {
         path: "dashboard",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <Dashboard />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
         loader: () => fetch("http://localhost:3000/fund"),
       },
       {
         path: "addfund",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <AddFund />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
       },
       {
         path: "editprofile",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <EditProfile />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
       },
       {
         path: "profile",
         element: (
-          <PrivateRoter>
+          <PrivateRouter>
             <Profile />
-          </PrivateRoter>
-        ),
-      },
-      {
-        path: "register",
-        element: (
-          <PrivateRoter>
-            <Register />
-          </PrivateRoter>
+          </PrivateRouter>
         ),
       },
     ],

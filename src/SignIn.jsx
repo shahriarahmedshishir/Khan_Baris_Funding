@@ -20,25 +20,32 @@ const SignIn = () => {
     }
   };
   return (
-    <form
-      onSubmit={handleSignIn}
-      className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
-    >
-      <legend className="fieldset-legend">Login</legend>
+    <div className="flex justify-center items-center min-h-screen">
+      <form
+        onSubmit={handleSignIn}
+        className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+      >
+        <legend className="fieldset-legend">Login</legend>
 
-      <label className="label">Email</label>
-      <input type="email" className="input" placeholder="Email" name="email" />
+        <label className="label">Email</label>
+        <input
+          type="email"
+          className="input"
+          placeholder="Email"
+          name="email"
+        />
 
-      <label className="label">Password</label>
-      <input
-        type="password"
-        className="input"
-        placeholder="Password"
-        name="password"
-      />
+        <label className="label">Password</label>
+        <input
+          type="password"
+          className="input"
+          placeholder="Password"
+          name="password"
+        />
 
-      <button className="btn btn-neutral submit mt-4">Login</button>
-    </form>
+        <button className="btn btn-neutral submit mt-4">Login</button>
+      </form>
+    </div>
   );
 };
 

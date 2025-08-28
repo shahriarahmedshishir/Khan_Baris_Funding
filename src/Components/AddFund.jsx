@@ -41,15 +41,15 @@ const AddFund = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Transaction successful:", data);
-        // You can add logic here to show a success message to the user
+        console.log("Fund successful:", data);
+
+        alert("Fund completed successfully!");
+        form.reset();
       })
       .catch((err) => {
         console.error("Failed to make transaction:", err);
-        // You can add logic here to show an error message
+        alert("Failed to complete transaction. Please try again.");
       });
-
-    console.log("Transaction Data:", transactionData);
   };
 
   return (

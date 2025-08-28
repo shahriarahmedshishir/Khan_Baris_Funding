@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import AuthContext from "./AuthContext";
 import {
-  createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
@@ -12,11 +11,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  const createUser = (email, password) => {
-    setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
 
   const signInUser = (email, password) => {
     setLoading(true);
@@ -55,7 +49,6 @@ const AuthProvider = ({ children }) => {
     user,
     isAdmin,
     loading,
-    createUser,
     signInUser,
     signOutUser,
   };
