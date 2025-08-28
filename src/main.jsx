@@ -14,6 +14,7 @@ import SignIn from "./SignIn.jsx";
 import AuthProvider from "./Components/context/AuthProvider.jsx";
 import AddFund from "./Components/AddFund.jsx";
 import EditProfile from "./Components/EditProfile.jsx";
+import Allusers from "./Components/Allusers.jsx";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,19 @@ const router = createBrowserRouter([
             <Profile />
           </PrivateRouter>
         ),
+      },
+      {
+        path: "allusers",
+        element: (
+          <PrivateRouter>
+            <Allusers />
+          </PrivateRouter>
+        ),
+        loader: async () => {
+          const res = await fetch("http://localhost:3000/allprofile");
+          if (!res.ok) throw new Error("Failed to fetch users");
+          return res.json();
+        },
       },
     ],
   },

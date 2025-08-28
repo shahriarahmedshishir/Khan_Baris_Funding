@@ -43,6 +43,11 @@ const navItems = [
     icon: <FaTachometerAlt size={18} />,
     requiresAdmin: true,
   },
+  {
+    to: "/home/allusers",
+    label: "All User",
+    icon: <FaTachometerAlt size={18} />,
+  },
 ];
 
 const Navbar = () => {
